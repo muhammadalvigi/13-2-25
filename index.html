@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kalkulator</title>
+	<style type="text/css">
+		body{
+			display: flex;
+			height: 100vh;
+			align-items: center;
+			justify-content: center;
+			background-color: pink;
+		}
+		.calkulator{
+			background-color: white;
+			padding: 25px;
+			border-radius: 30px;
+
+		}
+		#input{
+			width: 100%;
+			height: 50px;
+			font-size: 25px;
+			margin-bottom: 10px;
+			border-radius: 30px;
+			box-sizing: border-box;
+			text-align: right;
+			padding: 20px;
+		}
+		 .button{
+		 	grid-template-columns: repeat(4, 1fr);
+		 	display: grid;
+		 	gap: 10px;
+		 }
+		 button{
+		 	height: 50px;
+		 	font-size: 20px;
+		 	border: none;
+		 	border-radius: 20px;
+		 	background-color: pink;
+		 }
+		 .hasil{
+		 	grid-column: span 3;
+		 }
+		 button:hover{
+		 	background-color: black;
+		 	color: white;
+		 }
+	</style>
+</head>
+<body>
+	<div class ="calkulator">
+		<input id="input" disabled>
+		<div class="button">
+			<button onclick="hapus('')">AC</button>
+			<button onclick="angka('7')">7</button>
+			<button onclick="angka('8')">8</button>
+			<button onclick="angka('9')">9</button>
+			<button onclick="angka('*')">X</button>
+			<button onclick="angka('4')">4</button>
+			<button onclick="angka('5')">5</button>
+			<button onclick="angka('6')">6</button>
+			<button onclick="angka('/')">:</button>
+			<button onclick="angka('1')">1</button>
+			<button onclick="angka('2')">2</button>
+			<button onclick="angka('3')">3</button>
+			<button onclick="angka('-')">-</button>
+			<button onclick="angka('+')">+</button>
+			<button onclick="angka('0')">0</button>
+			<button onclick="angka('.')">.</button>
+			<button onclick="hapus1('')">C</button>
+			<button class="hasil" onclick="hasil('')">=</button>
+		</div>
+	</div>
+<script >
+	const input = document.getElementById("input");
+	function angka(value){
+		input.value += value;
+	}
+	function hasil(){
+		input.value = eval(input.value);
+	}
+	function hapus(){
+		input.value = "";
+	}
+	function hapus1(){
+		input.value=input.value.slice(0, -1);
+	}
+</script>
+</body>
+</html>
